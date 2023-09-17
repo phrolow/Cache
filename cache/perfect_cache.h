@@ -22,8 +22,6 @@ private:
     }
 public:
     bool lookup_update(KeyT key) {
-        std::cout << "now " << key << std::endl;
-
         auto hit = current_cache_.find(key);
     
         if (hit == current_cache_.end()) {
@@ -34,13 +32,9 @@ public:
                     if(candidates_to_erase.size() == 1) {
                         int erased = *(candidates_to_erase.begin());
 
-                        std::cout << "erased: " << erased << std::endl;
-
                         current_cache_.erase(erased);
                         break;
                     }
-
-                    std::cout << "erasing from candidates: " << next_key << std::endl;
 
                     candidates_to_erase.erase(next_key);
                 }
@@ -48,14 +42,10 @@ public:
 
             current_cache_.insert(key);
 
-            std::cout << "miss" << std::endl;
-
             return false;
         }
 
         input_.pop_front();
-
-        std::cout << "hit" << std::endl;
 
         return true;
     }
