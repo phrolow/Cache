@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
         input.push_back(id);
 
-        if (cache.lookup_update(id, 0)) hits += 1;
+        if (cache.lookup_update(id, 0)) hits++;
     }
 
     std::cout << hits << "\n";
@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
     hits = 0;
 
     for(int key : input) {
-        if (perfect_cache.lookup_update(key)) hits += 1;
+        if (perfect_cache.lookup_update(key)) hits++;
     }
 
     std::cout << hits << "\n";
