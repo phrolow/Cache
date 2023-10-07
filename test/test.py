@@ -1,6 +1,4 @@
-import subprocess
-import argparse
-from subprocess import Popen, PIPE, STDOUT
+from subprocess import Popen, PIPE
 
 comp_test_data = {
     (4, 13, 1, 2, 3, 4, 1, 2, 5, 5, 2, 4, 3, 4, 1)              : (7, 5),
